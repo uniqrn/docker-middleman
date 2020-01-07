@@ -6,7 +6,7 @@ RUN bundle install
 FROM uniqrn/ruby:v2.6
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends git ssh \
+  && apt-get install -y --no-install-recommends git ssh rsync \
   && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /usr/local/bundle /usr/local/bundle
